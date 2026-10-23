@@ -1,0 +1,10 @@
+<button routerLink="/menu">Atras</button>
+<button (click)="cambiarFormato()">Cambiar formato</button>
+<h2>actual hour {{horaActual()}}</h2>
+
+<select (change)="cambiarPais($event)">
+  @for (pais of paises; track pais[0]) {
+    <option [value]="pais[0]">{{ pais[1] }}</option>
+  }
+</select>
+
