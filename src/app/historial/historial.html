@@ -1,0 +1,19 @@
+<button routerLink="/menu">Atrás al menú</button>
+<h1>Ejercicio 3: Historial de colores</h1>
+<label>Elige un color:
+  <select [value]="color()" (change)="cambiarColor($event)">
+    @for (opcion of colores; track opcion) {
+      <option [value]="opcion">{{ opcion }}</option>
+    }
+  </select>
+</label>
+<div class="recuadro" [style.backgroundColor]="color()"></div>
+<p>Cambios registrados: {{ total() }}</p>
+<p>Posición actual: {{ posicion() }} de {{ total() }}</p>
+<button (click)="atras()">Atrás</button>
+<button (click)="adelante()">Adelante</button>
+<p>
+  <label>Retroceder cambios: <input type="number" min="1" [value]="pasos" (input)="cambiarPasos($event)"></label>
+  <button (click)="retroceder()">Retroceder</button>
+</p>
+@if (error()) { <p class="error">{{ error() }}</p> }

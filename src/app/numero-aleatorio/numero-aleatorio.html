@@ -1,1 +1,17 @@
-<p>numero-aleatorio works!</p>
+<button routerLink="/menu">Atrás</button>
+<h1>Ejercicio 2: Números aleatorios</h1>
+
+<label>Mínimo: <input type="number" [value]="min" (input)="cambiarMin($event)"></label>
+<label>Máximo: <input type="number" [value]="max" (input)="cambiarMax($event)"></label>
+<label>Cantidad: <input type="number" [value]="cantidad" (input)="cambiarCantidad($event)"></label>
+
+<label><input type="checkbox" [checked]="noRepetidos" (change)="cambiarRepetidos($event)"> No permitir repetidos</label>
+<button (click)="generarNumeros()">Generar números</button>
+
+@if (error()) {
+  <p class="error">{{ error() }}</p>
+}
+@if (numeros().length > 0) {
+  <h2>Números generados</h2>
+  <p>{{ numeros().join(', ') }}</p>
+}

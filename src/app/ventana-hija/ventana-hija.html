@@ -1,0 +1,12 @@
+<button routerLink="/menu">Atrás</button>
+<h1>Ejercicio 4: Ventana hija</h1>
+<button (click)="abrirVentana()" [disabled]="abierta()">Abrir ventana 400x400</button>
+@if (abierta()) {
+  <p><button (click)="moverVentana(0, -100)">Arriba</button></p>
+  <button (click)="moverVentana(-100, 0)">Izquierda</button>
+  <button (click)="moverVentana(100, 0)">Derecha</button>
+  <p><button (click)="moverVentana(0, 100)">Abajo</button></p>
+  <button (click)="cerrarVentana()">Cerrar ventana</button>
+}
+@if (error()) { <p class="error">{{ error() }}</p> }
+<p>Nota: algunos navegadores no permiten desplazar ventanas emergentes.</p>
