@@ -1,1 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
+body { font-family: Arial, sans-serif; padding: 20px; margin: 0; background: white; color: black; }
+body.oscuro { background: #202020; color: white; }
+button { padding: 7px 12px; margin: 4px; cursor: pointer; }
+input, select { margin: 6px; padding: 5px; }
+label { display: inline-block; margin: 6px; }
+.error { color: #c62828; }
+body.oscuro .error { color: #ff9999; }

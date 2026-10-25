@@ -1,0 +1,13 @@
+<button routerLink="/menu">Atrás</button>
+<h1>Ejercicio 5: localStorage</h1>
+<h2>Hola {{ nombre() || 'usuario' }}</h2>
+<p>Número de visitas: {{ visitas() }}</p>
+<p>Última visita anterior: {{ ultimaVisita() }}</p>
+<label>Tema:
+  <select [value]="tema()" (change)="cambiarTema($event)">
+    <option value="">Sin elegir</option>
+    <option value="claro">Claro</option>
+    <option value="oscuro">Oscuro</option>
+  </select>
+</label>
+<p><button (click)="borrarDatos()">Eliminar datos de localStorage de este ejercicio</button></p>

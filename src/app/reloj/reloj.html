@@ -1,10 +1,15 @@
-<button routerLink="/menu">Atras</button>
-<button (click)="cambiarFormato()">Cambiar formato</button>
-<h2>actual hour {{horaActual()}}</h2>
-
-<select (change)="cambiarPais($event)">
-  @for (pais of paises; track pais[0]) {
-    <option [value]="pais[0]">{{ pais[1] }}</option>
-  }
-</select>
-
+<button routerLink="/menu">Atrás</button>
+<h1>Ejercicio 1: Fecha y hora actual</h1>
+<label><input type="checkbox" [checked]="formato" (change)="cambiarFormato()"> Formato 12 horas (AM/PM)</label>
+<h2>{{ horaActual() }}</h2>
+<label><input type="checkbox" [checked]="mostrarSegunda" (change)="cambiarMostrar($event)"> Mostrar segundo reloj</label>
+@if (mostrarSegunda) {
+  <label>Ciudad:
+    <select [value]="pais" (change)="cambiarPais($event)">
+      @for (opcion of paises; track opcion[0]) {
+        <option [value]="opcion[0]">{{ opcion[1] }}</option>
+      }
+    </select>
+  </label>
+  <h2>{{ segundaHora() }}</h2>
+}

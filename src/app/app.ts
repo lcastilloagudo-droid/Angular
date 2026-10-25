@@ -1,5 +1,6 @@
-import { Component, signal } from '@angular/core';
-import {RouterLink, RouterOutlet} from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { aplicarTema } from './tema';
 
 @Component({
   imports: [RouterOutlet],
@@ -7,6 +8,8 @@ import {RouterLink, RouterOutlet} from '@angular/router';
   styleUrl: './app.css',
   templateUrl: './app.html',
 })
-export class App {
-  protected readonly title = signal('EntregaEvaluableUT3');
+export class App implements OnInit {
+  ngOnInit() {
+    aplicarTema();
+  }
 }
